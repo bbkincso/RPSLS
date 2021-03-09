@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock-paper-scissors-lizard-spock</title>
+  <link rel="shortcut icon" href="#">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="images/icons/rpsls_128.png">
+  <script src="js/index.js" defer></script>
+  <meta name="theme-color" content="#FCB110">
+</head>
+
+<body>
+  <div id="container">
+    <div id="backdrop"></div>
+    <h1>Rock Paper Scissors Lizard Spock</h1>
+    <div id="infoBlock">
+      <p id="message">Play now!</p>
+      <button id="startButton">START</button>
+    </div>
+    <div id="players-block">
+      <div class="player-block">
+        <p>You</p>
+        <div class="selectedSigns">
+          <img id="playerSign" src="images/rock.png" alt="Player">
+        </div>
+      </div>
+      <div class="player-block">
+        <p>Computer</p>
+        <div class="selectedSigns">
+          <img id="computerSign" src="images/rock.png" alt="Computer">
+        </div>
+      </div>
+    </div>
+
+    <div id="selection">
+      <p>Select a sign to play!</p>
+      <ul>
+        <li><img id="lizard" alt="Lizard" src="images/lizard.png"></li>
+        <li><img id="paper" alt="Paper" src="images/paper.png"></li>
+        <li><img id="spock" alt="Spock" src="images/spock.png"></li>
+        <li><img id="rock" alt="Rock" src="images/rock.png"></li>
+        <li><img id="scissors" alt="Scissors" src="images/scissors.png"></li>
+      </ul>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

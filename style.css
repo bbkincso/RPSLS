@@ -21,7 +21,6 @@ body {
   width: 100vw;
   max-width: 920px;
   margin: auto;
-  border: 2px solid black;
 }
 
 h1 {
@@ -100,6 +99,9 @@ p {
   margin: auto;
   padding-top: 20%;
   text-align: center;
+}
+
+.borderWithShadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 4px;
 }
@@ -135,8 +137,6 @@ p {
   transform: translateX(-50%);
   text-align: center;
   bottom: 3%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 4px;
 }
 
 #selection p {
@@ -184,7 +184,11 @@ li img {
   }
 
   .player-block {
-    padding-top: 18%;
+    padding-top: 13%;
+  }
+
+  #rule {
+    padding-top: 3%;
   }
 
   .selectedSigns {
@@ -243,6 +247,10 @@ li img {
     padding-top: 15%;
   }
 
+  #rule {
+    padding-top: 3%;
+  }
+
   .selectedSigns {
     width: 6.5rem;
     height: 6.5rem;
@@ -299,6 +307,15 @@ li img {
     padding-top: 20%;
   }
 
+  .player-block p {
+    font-size: 1.1rem;
+  }
+
+  #rule {
+    padding-top: 3%;
+    font-size: 1rem;
+  }
+
   .selectedSigns {
     width: 7.5rem;
     height: 7.5rem;
@@ -338,16 +355,21 @@ li img {
   }
 
   #players-block {
-    padding: 10% 0 2% 0;
+    padding: 13% 0 2% 0;
   }
 
   .player-block p {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  #rule {
+    padding-top: 4%;
+    font-size: 1rem;
   }
 
   .selectedSigns {
-    width: 6rem;
-    height: 6rem;
+    width: 5.5rem;
+    height: 5.5rem;
   }
 
   #message {
@@ -375,7 +397,7 @@ li img {
     font-size: 1.6rem;
   }
   #players-block {
-    padding: 10% 0 2% 0;
+    padding: 7% 0 2% 0;
   }
   .player-block {
     margin: 0rem 1.6rem;
@@ -383,6 +405,11 @@ li img {
 
   .player-block p {
     padding: 10%;
+    font-size: 1.1rem;
+  }
+
+  #rule {
+    padding-top: 4%;
     font-size: 1.1rem;
   }
 
@@ -435,6 +462,11 @@ li img {
 
   .player-block p {
     padding: 10%;
+    font-size: 1.3rem;
+  }
+
+  #rule {
+    padding-top: 5%;
     font-size: 1.3rem;
   }
 
@@ -491,6 +523,11 @@ li img {
     font-size: 1.3rem;
   }
 
+  #rule {
+    padding-top: 5%;
+    font-size: 1.3rem;
+  }
+
   .selectedSigns {
     width: 8rem;
     height: 8rem;
@@ -533,7 +570,7 @@ li img {
     font-size: 2.2rem;
   }
   #players-block {
-    padding: 15% 0 5% 0;
+    padding: 10% 0 5% 0;
   }
   .player-block {
     margin: 0rem 2rem;
@@ -541,6 +578,11 @@ li img {
 
   .player-block p {
     padding: 10%;
+    font-size: 1.4rem;
+  }
+
+  #rule {
+    padding-top: 5%;
     font-size: 1.4rem;
   }
 

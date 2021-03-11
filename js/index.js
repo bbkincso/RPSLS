@@ -1,4 +1,5 @@
 const message = document.getElementById('message');
+const rule = document.getElementById('rule');
 const startGameButton = document.getElementById('startButton');
 const infoBlock = document.getElementById('infoBlock');
 const backdrop = document.getElementById('backdrop');
@@ -23,6 +24,19 @@ const signs = [
 ];
 let signIndex = 0;
 
+const rules = [
+  'scissors cuts paper',
+  'paper covers rock',
+  'rock crushes lizard',
+  'lizard poisons spock',
+  'spock smashes scissors',
+  'scissors decapitates lizard',
+  'lizard eats paper',
+  'paper disproves spock',
+  'spock vaporizes rock',
+  'rock crushes scissors'
+];
+
 //function to get random hand sign for computer
 function getRandomHandSign() {
   let random = Math.floor(Math.random() * signs.length);
@@ -45,9 +59,22 @@ rotateImages = (img) => {
   }
 };
 
+// function to display the rule between the selected signs
+displayRule = (sign1, sign2) => {
+  let display;
+
+  for (i = 0; i < rules.length; i++) {
+    if (sign1 == sign2) {
+      display = 'it is a draw';
+    } else if (rules[i].includes(sign1) && rules[i].includes(sign2)) {
+      display = rules[i];
+  }
+}
+  rule.innerHTML = display;
+}
+
 //function to select winner between player and computer
 selectWinner = (player, computer) => {
-  console.log('player=' + player + ' computer= ' + computer);
   let display;
 
   sign = signs.filter((sign) => {
@@ -61,6 +88,7 @@ selectWinner = (player, computer) => {
     display = 'You lost!';
   }
 
+  displayRule(player, computer);
   message.innerHTML = display;
   startGameButton.innerHTML = 'Play again';
 

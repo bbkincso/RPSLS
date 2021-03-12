@@ -10,17 +10,51 @@
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="images/icons/rpsls_128.png">
   <script src="js/index.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <meta name="theme-color" content="#FCB110">
 </head>
 
 <body>
   <div id="container">
     <div id="backdrop"></div>
-    <h1>Rock Paper Scissors Lizard Spock</h1>
+    
+    <div id="settingsBlock">
+      <button id="back-button"><img id="back-img" src="images/back.png"></button>
+
+      <button class="toggle-button" id="game-rule_button"> Click to check ules of the game</button>
+
+      <div id="game-rule">
+        <iframe width="300" height="300" src="https://www.youtube.com/embed/_PUEoDYpUyQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>scissors cuts paper</p>
+        <p>paper covers rock</p>
+        <p>rock crushes lizard</p>
+        <p>lizard poisons spock</p>
+        <p>spock smashes scissors</p>
+        <p>scissors decapitates lizard</p>
+        <p>lizard eats paper</p>
+        <p>paper disproves spock</p>
+        <p>spock vaporizes rock</p>
+        <p>rock crushes scissors</p>
+      </div>
+
+      <button class="toggle-button" id="change-color_button">Change Theme color</button>
+
+    </div>
+    
     <div id="infoBlock">
       <p id="message">Play now!</p>
       <button id="startButton">START</button>
     </div>
+
+    <div id="settings">
+      <button class="settings-button" id="settings-button_mobile">
+        <span class="settings-button_bar"></span>
+        <span class="settings-button_bar"></span>
+        <span class="settings-button_bar"></span>
+      </button>
+      <button class="settings-button" id="settings-button_desktop">Settings</button>
+    </div>
+    <h1>Rock Paper Scissors Lizard Spock</h1>
     <div id="players-block" class="borderWithShadow">
       <div class="player-block">
         <p class="player">You</p>
@@ -34,7 +68,7 @@
           <img id="computerSign" src="images/rock.png" alt="Computer">
         </div>
       </div>
-        <p id="rule">Here comes the rule</p>
+        <p id="rule"></p>
     </div>
 
     <div id="selection" class="borderWithShadow">

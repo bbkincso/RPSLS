@@ -3,6 +3,9 @@ const rule = document.getElementById('rule');
 const startGameButton = document.getElementById('startButton');
 const infoBlock = document.getElementById('infoBlock');
 const backdrop = document.getElementById('backdrop');
+const backButton = document.getElementById('back-button');
+const settingsButton1 = document.getElementById('settings-button_mobile');
+const settingsButton2 = document.getElementById('settings-button_desktop');
 
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
@@ -65,7 +68,7 @@ displayRule = (sign1, sign2) => {
 
   for (i = 0; i < rules.length; i++) {
     if (sign1 == sign2) {
-      display = 'it is a draw';
+      display = sign1 + ' against ' + sign2;
     } else if (rules[i].includes(sign1) && rules[i].includes(sign2)) {
       display = rules[i];
   }
@@ -115,13 +118,30 @@ document.addEventListener('click', (e) => {
   });
 });
 
+settingsButton1.addEventListener('click', function () {
+  document.getElementById('settingsBlock').style.display = 'block';
+});
+
+settingsButton2.addEventListener('click', function() {
+  document.getElementById('settingsBlock').style.display = 'block';
+});
+
+backButton.addEventListener('click', () => {
+  document.getElementById('settingsBlock').style.display = 'none';
+});
+
 startGameButton.addEventListener('click', function () {
   infoBlock.style.display = 'none';
   backdrop.style.display = 'none';
+  rule.innerHTML = '';
   rotatePlayerHandSign = setInterval(function () {
     rotateImages(playerHandSign);
   }, 300);
   rotateComputerHandSign = setInterval(function () {
     rotateImages(computerHandSign);
   }, 300);
+});
+
+document.getElementById('game-rule_button').addEventListener('click', () => {
+  $(document.getElementById('game-rule')).toggle(1000);
 });

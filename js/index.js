@@ -142,6 +142,38 @@ startGameButton.addEventListener('click', function () {
   }, 300);
 });
 
-document.getElementById('game-rule_button').addEventListener('click', () => {
-  $(document.getElementById('game-rule')).toggle(1000);
+
+const ruleShowButton = document.getElementById('rule-right');
+const ruleHideButton = document.getElementById('rule-down');
+const ruleBlock = document.getElementById('game-rule');
+
+const setColorShowButton = document.getElementById('set-color-right');
+const setColorHideButton = document.getElementById('set-color-down');
+const setColorBlock = document.getElementById('set-color');
+
+
+
+ruleShowButton.addEventListener('click', () => {
+  $(ruleBlock).show(1000);
+  ruleShowButton.style.display = 'none';
+  ruleHideButton.style.display = 'inline-block';
 });
+
+ruleHideButton.addEventListener('click', () => {
+  $(ruleBlock).hide(1000);
+  ruleShowButton.style.display = 'inline-block';
+  ruleHideButton.style.display = 'none';
+});
+
+setColorShowButton.addEventListener('click', () => {
+  $(setColorBlock).show(1000);
+  setColorShowButton.style.display = 'none';
+  setColorHideButton.style.display = 'inline-block';
+});
+
+setColorHideButton.addEventListener('click', () => {
+  $(setColorBlock).hide(1000);
+  setColorShowButton.style.display = 'inline-block';
+  setColorHideButton.style.display = 'none';
+});
+

@@ -15,7 +15,11 @@ body {
 
 #container {
   position: relative;
-  background-color: #fcb110;
+  /* background-color: #fcb110; */
+  /* background-color: #e60000; */
+  /* background-color: #ee53ba; */
+  background-color: #3385ff;
+
   height: 100vh;
   max-height: 1240px;
   width: 100vw;
@@ -64,50 +68,137 @@ p {
   border-radius: 3px;
 }
 
-#back-button {
+#back {
   position: absolute;
-  background: transparent;
-  width: 3rem;
   top: 2%;
   left: 2%;
+}
+
+#back-button {
+  background-color: transparent;
+  width: 2rem;
   border: none;
   cursor: pointer;
+  padding: 0 10%;
+}
+
+#back-button img {
+  width: 100%;
 }
 
 #back-button:focus {
   outline: none;
 }
 
-#back-img {
-  width: 100%;
+#toggle-div-1 {
+  margin-top: 20%;
 }
 
-#game-rule_button {
-  margin-top: 25%;
+.toggle-div {
+  width: 70%;
+  background: white;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: auto;
+  margin-bottom: 2%;
+  padding: 1% 0;
+}
+
+.toggle-div p {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.toggle-button {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  cursor: pointer;
+  margin: 0 5% 0 3%;
+}
+
+.toggle-button {
+  outline: none;
+}
+
+.toggle-button img {
+  width: 100%;
+  height: 100%;
+}
+
+#rule-down {
+  display: none;
+}
+
+#set-color-down {
+  display: none;
 }
 
 #game-rule {
   display: none;
   width: 100%;
-  text-align: center;
 }
 
-.toggle-button {
+#game-rule_video {
+  width: 400px;
+  height: 250px;
   display: block;
-  width: 80%;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  padding: 1% 0;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  margin: auto;
+  margin: 5% auto;
+}
+
+#game-rule_text {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 5%;
 }
 
-.toggle-button {
-  outline: none;
+.text-block {
+  display: inline-block;
+}
+
+.text-block p {
+  font-size: 1.2 rem;
+}
+
+#text-block-1 {
+  margin-left: 5%;
+}
+
+#text-block-2 {
+  float: right;
+  margin-right: 5%;
+}
+
+#set-color {
+  display: none;
+  margin: auto;
+  width: 70%;
+  text-align: center;
+}
+
+.color {
+  display: inline-block;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid #292828;
+  border-radius: 50%;
+  margin: 10% 8%;
+}
+
+#color-1 {
+  background-color: #e60000;
+}
+
+#color-2 {
+  background-color: #fcb110;
+}
+
+#color-3 {
+  background-color: #3385ff;
 }
 
 #infoBlock {
@@ -157,13 +248,13 @@ p {
 }
 
 .settings-button {
-  width: 2.5rem;
-  background: transparent;
-  border: none;
+  width: 2.2rem;
+  background: #fff5e6;
+  border: 1px solid #292828;
+  border-radius: 3px;
   cursor: pointer;
   padding-top: 0;
   padding-bottom: 0;
-  vertical-align: middle;
 }
 
 .settings-button:focus {
@@ -171,7 +262,13 @@ p {
 }
 
 #settings-button_desktop {
+  width: 2.5rem;
   display: none;
+}
+
+#settings-button_desktop img {
+  width: 100%;
+  margin-top: 5%;
 }
 
 .settings-button_bar {
@@ -179,7 +276,7 @@ p {
   height: 0.2rem;
   background: #292828;
   display: block;
-  margin: 0.3rem 0;
+  margin: 0.2rem 0;
 }
 
 #players-block {
@@ -235,19 +332,19 @@ p {
   color: #292828;
 }
 
-ul {
+#selection ul {
   padding: 0;
   list-style-type: none;
 }
 
-li {
+#selection li {
   display: inline-block;
   width: 2.5rem;
   height: 2.5rem;
   margin: 0.3rem;
 }
 
-li img {
+#selection li img {
   background-color: #fff5e6;
   width: 100%;
   border: 2px solid #292828;
@@ -431,7 +528,7 @@ li img {
     padding: 3% 0 2% 0;
   }
 
-  ul {
+  #selection ul {
     padding: 2% 0 0 0;
     width: 70%;
     margin: auto;
@@ -482,7 +579,7 @@ li img {
     padding: 10% 0 4% 0;
   }
 
-  ul {
+  #selection ul {
     width: 80%;
     margin: auto;
   }
@@ -549,11 +646,11 @@ li img {
     padding-top: 10%;
   }
 
-  ul {
+  #selection ul {
     padding: 2% 0 0 0;
   }
 
-  li {
+  #selection li {
     width: 3rem;
     height: 3rem;
     margin: 0.5rem;
@@ -622,11 +719,11 @@ li img {
     padding-top: 10%;
   }
 
-  ul {
+  #selection ul {
     padding-top: 2%;
   }
 
-  li {
+  #selection li {
     width: 3.5rem;
     height: 3.5rem;
     margin: 0.5rem;
@@ -649,10 +746,6 @@ li img {
 
   #settings-button_mobile {
     display: none;
-  }
-
-  #back-button {
-    width: 3.5rem;
   }
 
   h1 {
@@ -699,11 +792,11 @@ li img {
     padding-top: 10%;
   }
 
-  ul {
+  #selection ul {
     padding-top: 2%;
   }
 
-  li {
+  #selection li {
     width: 4rem;
     height: 4rem;
     margin: 0.5rem;
@@ -726,10 +819,6 @@ li img {
 
   #settings-button_mobile {
     display: none;
-  }
-
-  #back-button {
-    width: 3.5rem;
   }
 
   h1 {
@@ -777,11 +866,11 @@ li img {
     padding-top: 10%;
   }
 
-  ul {
+  #selection ul {
     padding-top: 2%;
   }
 
-  li {
+  #selection li {
     width: 4rem;
     height: 4rem;
     margin: 0.5rem;

@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FCB110">
   <title>Rock-paper-scissors-lizard-spock</title>
   <link rel="shortcut icon" href="#">
   <link rel="stylesheet" href="style.css">
@@ -11,33 +12,54 @@
   <link rel="apple-touch-icon" href="images/icons/rpsls_128.png">
   <script src="js/index.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <meta name="theme-color" content="#FCB110">
-</head>
 
 <body>
   <div id="container">
     <div id="backdrop"></div>
     
     <div id="settingsBlock">
-      <button id="back-button"><img id="back-img" src="images/back.png"></button>
-
-      <button class="toggle-button" id="game-rule_button"> Click to check ules of the game</button>
-
-      <div id="game-rule">
-        <iframe width="300" height="300" src="https://www.youtube.com/embed/_PUEoDYpUyQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p>scissors cuts paper</p>
-        <p>paper covers rock</p>
-        <p>rock crushes lizard</p>
-        <p>lizard poisons spock</p>
-        <p>spock smashes scissors</p>
-        <p>scissors decapitates lizard</p>
-        <p>lizard eats paper</p>
-        <p>paper disproves spock</p>
-        <p>spock vaporizes rock</p>
-        <p>rock crushes scissors</p>
+      <div id="back">
+        <button id="back-button">
+          <img src="images/arrow-left-solid.png">
+        </button>
+      </div>
+      
+      <div class="toggle-div" id="toggle-div-1">
+        <button class="toggle-button" id="rule-right"><img src="images/caret-right-solid.png"></button>
+        <button class="toggle-button" id="rule-down"><img src="images/caret-down-solid.png"></button>
+        <p>Learn the rules</p>
       </div>
 
-      <button class="toggle-button" id="change-color_button">Change Theme color</button>
+      <div id="game-rule">
+        <iframe id="game-rule_video" src="https://www.youtube.com/embed/_PUEoDYpUyQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div id="game-rule_text">
+          <div class="text-block" id="text-block-1">
+            <p>Scissors cuts Paper</p>
+            <p>Paper covers Rock</p>
+            <p>Rock crushes Lizard</p>
+            <p>Lizard poisons Spock</p>
+            <p>Spock smashes Scissors</p></div>
+          <div class="text-block" id="text-block-2">
+            <p>Scissors decapitates Lizard</p>
+            <p>Lizard eats Paper</p>
+            <p>Paper disproves Spock</p>
+            <p>Spock vaporizes Rock</p>
+            <p>Rock crushes Scissors</p>
+          </div>          
+        </div>
+      </div>
+
+      <div class="toggle-div">
+        <button class="toggle-button" id="set-color-right"><img src="images/caret-right-solid.png"></button>
+        <button class="toggle-button" id="set-color-down"><img src="images/caret-down-solid.png"></button>
+        <p>Change color</p>
+      </div>
+
+      <div id="set-color">
+            <div class="color" id="color-1"></div>
+            <div class="color" id="color-2"></div>
+            <div class="color" id="color-3"></div>
+      </div>
 
     </div>
     
@@ -47,13 +69,16 @@
     </div>
 
     <div id="settings">
-      <button class="settings-button" id="settings-button_mobile">
-        <span class="settings-button_bar"></span>
-        <span class="settings-button_bar"></span>
-        <span class="settings-button_bar"></span>
-      </button>
-      <button class="settings-button" id="settings-button_desktop">Settings</button>
+        <button class="settings-button" id="settings-button_mobile">
+          <span class="settings-button_bar"></span>
+          <span class="settings-button_bar"></span>
+          <span class="settings-button_bar"></span>
+        </button>
+
+        <button class="settings-button" id="settings-button_desktop"><img src="images/cog-solid.png"></button>
     </div>
+
+
     <h1>Rock Paper Scissors Lizard Spock</h1>
     <div id="players-block" class="borderWithShadow">
       <div class="player-block">

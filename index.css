@@ -2,29 +2,31 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-body {
-  background-color: #fcb110;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.borderWithShadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
 }
 
-#container {
-  position: relative;
-  /* background-color: #fcb110; */
-  /* background-color: #e60000; */
-  /* background-color: #ee53ba; */
-  background-color: #3385ff;
+.borderWithoutShadow {
+  border: 1px solid #292828;
+}
 
-  height: 100vh;
-  max-height: 1240px;
-  width: 100vw;
-  max-width: 920px;
-  margin: auto;
+.mainColor {
+  background-color: #fcb110;
+}
+
+.mainColor2 {
+  background-color: #fff5e6;
+}
+
+.textStyle1 {
+  font-family: "Poppins", sans-serif;
+  color: #292828;
+}
+
+.textStyle2 {
+  font-family: "Poppins", sans-serif;
+  color: #555555;
 }
 
 h1 {
@@ -39,10 +41,48 @@ h1 {
 }
 
 p {
-  font-family: "Poppins", sans-serif;
   font-size: 0.9rem;
   margin: 0;
-  color: #4d4c4c;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+body {
+  background-color: #fcb110;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#container {
+  position: relative;
+  height: 100vh;
+  max-height: 1240px;
+  width: 100vw;
+  max-width: 920px;
+  margin: auto;
 }
 
 #backdrop {
@@ -55,152 +95,6 @@ p {
   background: rgba(0, 0, 0, 0.6);
 }
 
-#settingsBlock {
-  display: none;
-  position: absolute;
-  z-index: 3;
-  width: 97%;
-  height: 96%;
-  top: 2%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff5e6;
-  border-radius: 3px;
-}
-
-#back {
-  position: absolute;
-  top: 2%;
-  left: 2%;
-}
-
-#back-button {
-  background-color: transparent;
-  width: 2rem;
-  border: none;
-  cursor: pointer;
-  padding: 0 10%;
-}
-
-#back-button img {
-  width: 100%;
-}
-
-#back-button:focus {
-  outline: none;
-}
-
-#toggle-div-1 {
-  margin-top: 20%;
-}
-
-.toggle-div {
-  width: 70%;
-  background: white;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  margin: auto;
-  margin-bottom: 2%;
-  padding: 1% 0;
-}
-
-.toggle-div p {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.toggle-button {
-  display: inline-block;
-  vertical-align: middle;
-  border: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  background: transparent;
-  cursor: pointer;
-  margin: 0 5% 0 3%;
-}
-
-.toggle-button {
-  outline: none;
-}
-
-.toggle-button img {
-  width: 100%;
-  height: 100%;
-}
-
-#rule-down {
-  display: none;
-}
-
-#set-color-down {
-  display: none;
-}
-
-#game-rule {
-  display: none;
-  width: 100%;
-}
-
-#game-rule_video {
-  width: 400px;
-  height: 250px;
-  display: block;
-  margin: 5% auto;
-}
-
-#game-rule_text {
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 5%;
-}
-
-.text-block {
-  display: inline-block;
-}
-
-.text-block p {
-  font-size: 1.2 rem;
-}
-
-#text-block-1 {
-  margin-left: 5%;
-}
-
-#text-block-2 {
-  float: right;
-  margin-right: 5%;
-}
-
-#set-color {
-  display: none;
-  margin: auto;
-  width: 70%;
-  text-align: center;
-}
-
-.color {
-  display: inline-block;
-  width: 3.5rem;
-  height: 3.5rem;
-  border: 1px solid #292828;
-  border-radius: 50%;
-  margin: 10% 8%;
-}
-
-#color-1 {
-  background-color: #e60000;
-}
-
-#color-2 {
-  background-color: #fcb110;
-}
-
-#color-3 {
-  background-color: #3385ff;
-}
-
 #infoBlock {
   position: absolute;
   z-index: 2;
@@ -210,13 +104,11 @@ p {
   max-height: 370px;
   left: 50%;
   transform: translateX(-50%);
-  background: #fff5e6;
   bottom: 3%;
   border-radius: 3px;
 }
 
 #message {
-  font-family: "Poppins", sans-serif;
   font-size: 1.3rem;
   position: absolute;
   left: 50%;
@@ -225,14 +117,8 @@ p {
 }
 
 #startButton {
-  font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 1rem;
-  text-decoration: none;
-  background-color: #fcb110;
-  color: #292828;
-  border: 1px solid #292828;
-  border-radius: 3px;
   padding: 0.5rem 2rem;
   position: absolute;
   left: 50%;
@@ -249,16 +135,8 @@ p {
 
 .settings-button {
   width: 2.2rem;
-  background: #fff5e6;
-  border: 1px solid #292828;
-  border-radius: 3px;
-  cursor: pointer;
   padding-top: 0;
   padding-bottom: 0;
-}
-
-.settings-button:focus {
-  outline: none;
 }
 
 #settings-button_desktop {
@@ -267,7 +145,6 @@ p {
 }
 
 #settings-button_desktop img {
-  width: 100%;
   margin-top: 5%;
 }
 
@@ -280,7 +157,6 @@ p {
 }
 
 #players-block {
-  background-color: #fff5e6;
   width: 90%;
   max-width: 650px;
   height: 30%;
@@ -288,11 +164,6 @@ p {
   margin: auto;
   padding-top: 20%;
   text-align: center;
-}
-
-.borderWithShadow {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 4px;
 }
 
 .player-block {
@@ -310,13 +181,7 @@ p {
   height: 5.5rem;
 }
 
-.selectedSigns img {
-  width: 100%;
-  border: 2px solid #4d4c4c;
-}
-
 #selection {
-  background-color: #fff5e6;
   position: absolute;
   width: 90%;
   max-width: 650px;
@@ -328,26 +193,12 @@ p {
   bottom: 3%;
 }
 
-#selection p {
-  color: #292828;
-}
-
-#selection ul {
-  padding: 0;
-  list-style-type: none;
-}
-
 #selection li {
   display: inline-block;
   width: 2.5rem;
   height: 2.5rem;
   margin: 0.3rem;
-}
-
-#selection li img {
-  background-color: #fff5e6;
-  width: 100%;
-  border: 2px solid #292828;
+  cursor: pointer;
 }
 
 /* place selection on the side in landscape */

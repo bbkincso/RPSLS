@@ -109,6 +109,8 @@ game = (playerChoice) => {
   selectWinner(playerChoice, computerChoice);
 };
 
+
+
 // event listeners
 document.addEventListener('click', (e) => {
   signs.forEach((sign) => {
@@ -126,10 +128,6 @@ settingsButton2.addEventListener('click', function() {
   document.getElementById('settingsBlock').style.display = 'block';
 });
 
-backButton.addEventListener('click', () => {
-  document.getElementById('settingsBlock').style.display = 'none';
-});
-
 startGameButton.addEventListener('click', function () {
   infoBlock.style.display = 'none';
   backdrop.style.display = 'none';
@@ -143,6 +141,7 @@ startGameButton.addEventListener('click', function () {
 });
 
 
+
 const ruleShowButton = document.getElementById('rule-right');
 const ruleHideButton = document.getElementById('rule-down');
 const ruleBlock = document.getElementById('game-rule');
@@ -151,29 +150,40 @@ const setColorShowButton = document.getElementById('set-color-right');
 const setColorHideButton = document.getElementById('set-color-down');
 const setColorBlock = document.getElementById('set-color');
 
+//function to hide hidden block
+const hideBlock = function (myBlock, imgShow, imgHide) {
+  $(myBlock).hide(600);
+  imgShow.style.display = 'inline-block';
+  imgHide.style.display = 'none';
+};
 
+//function to show hidden block
+const showBlock = function (myBlock, imgShow, imgHide) {
+  $(myBlock).show(600);
+  imgShow.style.display = 'inline-block';
+  imgHide.style.display = 'none';
+};
+
+//event listeners
+backButton.addEventListener('click', () => {
+  document.getElementById('settingsBlock').style.display = 'none';
+});
 
 ruleShowButton.addEventListener('click', () => {
-  $(ruleBlock).show(1000);
-  ruleShowButton.style.display = 'none';
-  ruleHideButton.style.display = 'inline-block';
+  hideBlock(setColorBlock, setColorShowButton, setColorHideButton);
+  showBlock(ruleBlock, ruleHideButton, ruleShowButton);
 });
 
 ruleHideButton.addEventListener('click', () => {
-  $(ruleBlock).hide(1000);
-  ruleShowButton.style.display = 'inline-block';
-  ruleHideButton.style.display = 'none';
+  hideBlock(ruleBlock, ruleShowButton, ruleHideButton);
 });
 
+
 setColorShowButton.addEventListener('click', () => {
-  $(setColorBlock).show(1000);
-  setColorShowButton.style.display = 'none';
-  setColorHideButton.style.display = 'inline-block';
+  hideBlock(ruleBlock, ruleShowButton, ruleHideButton);
+  showBlock(setColorBlock, setColorHideButton, setColorShowButton);
 });
 
 setColorHideButton.addEventListener('click', () => {
-  $(setColorBlock).hide(1000);
-  setColorShowButton.style.display = 'inline-block';
-  setColorHideButton.style.display = 'none';
+  hideBlock(setColorBlock, setColorShowButton, setColorHideButton);
 });
-

@@ -1,0 +1,209 @@
+.settings-borderWithShadow {
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+#settingsBlock {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  width: 97%;
+  height: 96%;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+#back {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+
+#back-button {
+  background-color: transparent;
+  width: 1.5rem;
+  padding: 0 15%;
+}
+
+#toggle-div-1 {
+  margin-top: 25%;
+}
+
+.toggle-div {
+  width: 70%;
+  background: white;
+  margin: auto;
+  margin-bottom: 5%;
+}
+
+.toggle-div p {
+  display: inline-block;
+}
+
+.toggle-button {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  background: transparent;
+  cursor: pointer;
+  margin: 0 5% 0 5%;
+}
+
+#rule-down {
+  display: none;
+}
+
+#set-color-down {
+  display: none;
+}
+
+#game-rule {
+  background-color: white;
+  display: none;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 5%;
+}
+
+#game-rule_video {
+  width: 85%;
+  height: auto;
+  display: block;
+  margin: auto;
+  padding-top: 7%;
+}
+
+#game-rule_text {
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.text-block {
+  /* background-color: pink; */
+  width: 85%;
+  display: inline-block;
+  text-align: left;
+  margin: 10% 0;
+}
+
+.text-block p {
+  font-size: 0.7rem;
+  padding-left: 10%;
+}
+
+/* #text-block-1 {
+  margin-left: 15%;
+} */
+
+/* #text-block-2 {
+  float: right;
+  margin-right: 5%;
+} */
+
+#set-color {
+  display: none;
+  background-color: white;
+  width: 70%;
+  margin: 7% auto;
+  text-align: center;
+}
+
+.color {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin: 10% 2%;
+}
+
+#color-1 {
+  background-color: #e60000;
+}
+
+#color-2 {
+  background-color: #fcb110;
+}
+
+#color-3 {
+  background-color: #3385ff;
+}
+
+@media (orientation: landscape) {
+  #toggle-div-1 {
+    margin-top: 10%;
+  }
+
+  .toggle-div {
+    display: inline-block;
+    width: 25%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+  }
+
+  #game-rule {
+    position: absolute;
+    width: 65%;
+    height: 90%;
+    right: 2%;
+    top: 5%;
+    padding: 0;
+    margin: 0;
+  }
+
+  #game-rule_video {
+    width: 50%;
+    height: auto;
+    display: inline-block;
+    margin: 10% 0 0 4%;
+    padding: 0;
+  }
+
+  #game-rule_text {
+    float: right;
+    width: 40%;
+    margin-top: 4%;
+  }
+
+  .text-block {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    margin: 10% 0;
+  }
+
+  .text-block p {
+    font-size: 0.7rem;
+    padding-left: 0;
+  }
+
+  #set-color {
+    position: absolute;
+    margin: 0;
+    width: 55%;
+    height: 40%;
+    right: 7%;
+    top: 18%;
+  }
+
+  .color {
+    display: inline-block;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin: 10% 5%;
+  }
+}
+
+@media (min-width: 481px) {
+}
+
+@media (min-width: 769px) {
+}
+
+@media (min-width: 1280px) {
+}

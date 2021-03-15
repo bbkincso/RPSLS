@@ -7,103 +7,108 @@
   <meta name="theme-color" content="#FCB110">
   <title>Rock-paper-scissors-lizard-spock</title>
   <link rel="shortcut icon" href="#">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="settings.css">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="images/icons/rpsls_128.png">
   <script src="js/index.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <body>
-  <div id="container">
+  <div id="container" class="mainColor">
     <div id="backdrop"></div>
     
-    <div id="settingsBlock">
+    <div id="settingsBlock" class="mainColor2">
       <div id="back">
         <button id="back-button">
           <img src="images/arrow-left-solid.png">
         </button>
       </div>
       
-      <div class="toggle-div" id="toggle-div-1">
+      <div class="toggle-div settings-borderWithShadow" id="toggle-div-1">
         <button class="toggle-button" id="rule-right"><img src="images/caret-right-solid.png"></button>
         <button class="toggle-button" id="rule-down"><img src="images/caret-down-solid.png"></button>
-        <p>Learn the rules</p>
+        <p class="textStyle2">Learn the rules</p>
       </div>
 
-      <div id="game-rule">
+      <div id="game-rule" class="settings-borderWithShadow">
         <iframe id="game-rule_video" src="https://www.youtube.com/embed/_PUEoDYpUyQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div id="game-rule_text">
-          <div class="text-block" id="text-block-1">
-            <p>Scissors cuts Paper</p>
-            <p>Paper covers Rock</p>
-            <p>Rock crushes Lizard</p>
-            <p>Lizard poisons Spock</p>
-            <p>Spock smashes Scissors</p></div>
-          <div class="text-block" id="text-block-2">
-            <p>Scissors decapitates Lizard</p>
-            <p>Lizard eats Paper</p>
-            <p>Paper disproves Spock</p>
-            <p>Spock vaporizes Rock</p>
-            <p>Rock crushes Scissors</p>
-          </div>          
+          <div class="text-block">
+            <div id="text-block-1">
+              <p class="textStyle2">Scissors cuts Paper</p>
+              <p class="textStyle2">Paper covers Rock</p>
+              <p class="textStyle2">Rock crushes Lizard</p>
+              <p class="textStyle2">Lizard poisons Spock</p>
+              <p class="textStyle2">Spock smashes Scissors</p>
+            </div>
+            <div id="text-block-2">
+              <p class="textStyle2">Scissors decapitates Lizard</p>
+              <p class="textStyle2">Lizard eats Paper</p>
+              <p class="textStyle2">Paper disproves Spock</p>
+              <p class="textStyle2">Spock vaporizes Rock</p>
+              <p class="textStyle2">Rock crushes Scissors</p>
+            </div> 
+          </div>
+            
         </div>
       </div>
 
-      <div class="toggle-div">
+      <br><div class="toggle-div settings-borderWithShadow">
         <button class="toggle-button" id="set-color-right"><img src="images/caret-right-solid.png"></button>
         <button class="toggle-button" id="set-color-down"><img src="images/caret-down-solid.png"></button>
-        <p>Change color</p>
+        <p class="textStyle2">Change color</p>
       </div>
 
-      <div id="set-color">
-            <div class="color" id="color-1"></div>
-            <div class="color" id="color-2"></div>
-            <div class="color" id="color-3"></div>
+      <div id="set-color" class="settings-borderWithShadow">
+            <div class="color borderWithoutShadow" id="color-1"></div>
+            <div class="color borderWithoutShadow" id="color-2"></div>
+            <div class="color borderWithoutShadow" id="color-3"></div>
       </div>
 
     </div>
     
-    <div id="infoBlock">
-      <p id="message">Play now!</p>
-      <button id="startButton">START</button>
+    <div id="infoBlock" class="mainColor2">
+      <p class="textStyle2" id="message">Play now!</p>
+      <button id="startButton" class="mainColor borderWithShadow textStyle1">START</button>
     </div>
 
     <div id="settings">
-        <button class="settings-button" id="settings-button_mobile">
+        <button class="settings-button borderWithoutShadow mainColor2" id="settings-button_mobile">
           <span class="settings-button_bar"></span>
           <span class="settings-button_bar"></span>
           <span class="settings-button_bar"></span>
         </button>
 
-        <button class="settings-button" id="settings-button_desktop"><img src="images/cog-solid.png"></button>
+        <button class="settings-button borderWithoutShadow mainColor2" id="settings-button_desktop"><img src="images/cog-solid.png"></button>
     </div>
 
 
     <h1>Rock Paper Scissors Lizard Spock</h1>
-    <div id="players-block" class="borderWithShadow">
+    <div id="players-block" class="borderWithShadow mainColor2">
       <div class="player-block">
-        <p class="player">You</p>
+        <p class="player textStyle2">You</p>
         <div class="selectedSigns">
-          <img id="playerSign" src="images/rock.png" alt="Player">
+          <img class="borderWithoutShadow" id="playerSign" src="images/rock.png" alt="Player">
         </div>
       </div>
       <div class="player-block">
-        <p class="player">Computer</p>
+        <p class="player textStyle2">Computer</p>
         <div class="selectedSigns">
-          <img id="computerSign" src="images/rock.png" alt="Computer">
+          <img class="borderWithoutShadow" id="computerSign" src="images/rock.png" alt="Computer">
         </div>
       </div>
         <p id="rule"></p>
     </div>
 
-    <div id="selection" class="borderWithShadow">
-      <p>Select a sign to play!</p>
+    <div id="selection" class="borderWithShadow mainColor2">
+      <p class="textStyle2">Select a sign to play!</p>
       <ul>
-        <li><img id="lizard" alt="Lizard" src="images/lizard.png"></li>
-        <li><img id="paper" alt="Paper" src="images/paper.png"></li>
-        <li><img id="spock" alt="Spock" src="images/spock.png"></li>
-        <li><img id="rock" alt="Rock" src="images/rock.png"></li>
-        <li><img id="scissors" alt="Scissors" src="images/scissors.png"></li>
+        <li><img class="mainColor2 borderWithoutShadow" id="lizard" alt="Lizard" src="images/lizard.png"></li>
+        <li><img class="mainColor2 borderWithoutShadow" id="paper" alt="Paper" src="images/paper.png"></li>
+        <li><img class="mainColor2 borderWithoutShadow" id="spock" alt="Spock" src="images/spock.png"></li>
+        <li><img class="mainColor2 borderWithoutShadow" id="rock" alt="Rock" src="images/rock.png"></li>
+        <li><img class="mainColor2 borderWithoutShadow" id="scissors" alt="Scissors" src="images/scissors.png"></li>
       </ul>
     </div>
   </div>

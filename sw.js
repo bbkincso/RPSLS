@@ -14,8 +14,12 @@ const assets = [
     'images/cog-solid.png',
     'images/caret-right-solid.png',
     'images/caret-down-solid.png',
-    'images/arrow-left-solid'
+    'images/arrow-left-solid',
+    'audio/won.wav',
+    'audio/lost.wav',
+    'audio/draw.wav'
 ];
+
 
 self.addEventListener("install", evt => {
     //console.log("service worker has been installed");

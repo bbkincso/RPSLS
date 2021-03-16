@@ -61,9 +61,22 @@
       </div>
 
       <div id="set-color" class="settings-borderWithShadow">
-            <div class="color borderWithoutShadow" id="color-1"></div>
-            <div class="color borderWithoutShadow" id="color-2"></div>
-            <div class="color borderWithoutShadow" id="color-3"></div>
+            <div class="color borderWithoutShadow" id="red"></div>
+            <div class="color borderWithoutShadow" id="orange"></div>
+            <div class="color borderWithoutShadow" id="blue"></div>
+      </div>
+
+      <br><div class="toggle-div settings-borderWithShadow">
+        <button class="toggle-button" id="set-sound-right"><img src="images/caret-right-solid.png"></button>
+        <button class="toggle-button" id="set-sound-down"><img src="images/caret-down-solid.png"></button>
+        <p class="textStyle2">Sound</p>
+      </div>
+
+      <div id="set-sound" class="settings-borderWithShadow">
+        <input type="radio" class="radio" id="sound-on" name="sound" value="on">
+        <label for="on">Sound on</label><br>
+        <input type="radio" class="radio" id="sound-off" name="sound" value="off">
+        <label for="off">Sound off</label><br>
       </div>
 
     </div>
@@ -87,13 +100,13 @@
     <h1>Rock Paper Scissors Lizard Spock</h1>
     <div id="players-block" class="borderWithShadow mainColor2">
       <div class="player-block">
-        <p class="player textStyle2">You</p>
+        <p class="textStyle2">You: <span id="player-score">0</span></p>
         <div class="selectedSigns">
           <img class="borderWithoutShadow" id="playerSign" src="images/rock.png" alt="Player">
         </div>
       </div>
       <div class="player-block">
-        <p class="player textStyle2">Computer</p>
+        <p class="textStyle2 inlineP">Computer: <span id="computer-score">0</span></p>
         <div class="selectedSigns">
           <img class="borderWithoutShadow" id="computerSign" src="images/rock.png" alt="Computer">
         </div>
@@ -104,11 +117,11 @@
     <div id="selection" class="borderWithShadow mainColor2">
       <p class="textStyle2">Select a sign to play!</p>
       <ul>
-        <li><img class="mainColor2 borderWithoutShadow" id="lizard" alt="Lizard" src="images/lizard.png"></li>
-        <li><img class="mainColor2 borderWithoutShadow" id="paper" alt="Paper" src="images/paper.png"></li>
-        <li><img class="mainColor2 borderWithoutShadow" id="spock" alt="Spock" src="images/spock.png"></li>
-        <li><img class="mainColor2 borderWithoutShadow" id="rock" alt="Rock" src="images/rock.png"></li>
-        <li><img class="mainColor2 borderWithoutShadow" id="scissors" alt="Scissors" src="images/scissors.png"></li>
+        <li><img class="mainColor2 borderWithoutShadow sign" id="lizard" alt="Lizard" src="images/lizard.png"></li>
+        <li><img class="mainColor2 borderWithoutShadow sign" id="paper" alt="Paper" src="images/paper.png"></li>
+        <li><img class="mainColor2 borderWithoutShadow sign" id="spock" alt="Spock" src="images/spock.png"></li>
+        <li><img class="mainColor2 borderWithoutShadow sign" id="rock" alt="Rock" src="images/rock.png"></li>
+        <li><img class="mainColor2 borderWithoutShadow sign" id="scissors" alt="Scissors" src="images/scissors.png"></li>
       </ul>
     </div>
   </div>

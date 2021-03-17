@@ -124,18 +124,18 @@
   margin: 10% 2%;
 }
 
-#red {
-  background-color: #e60000;
+#color1 {
+  background-color: black;
   cursor: pointer;
 }
 
-#orange {
+#color2 {
   background-color: #fcb110;
   cursor: pointer;
 }
 
-#blue {
-  background-color: #3385ff;
+#color3 {
+  background-color: #005580;
   cursor: pointer;
 }
 

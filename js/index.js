@@ -17,6 +17,7 @@ const computerHandSign = document.getElementById('computerSign');
 
 const pScore = document.getElementById('player-score');
 const cScore = document.getElementById('computer-score');
+const myMusic = document.getElementById('main');
 
 const signs = [
   { name: 'lizard', defeates: ['paper', 'spock'] },
@@ -39,6 +40,28 @@ const rules = [
   'spock vaporizes rock',
   'rock crushes scissors'
 ];
+
+// FOR SETTINGS BLOCK
+const backButton = document.getElementById('back-button');
+
+const ruleShowButton = document.getElementById('rule-right');
+const ruleHideButton = document.getElementById('rule-down');
+const ruleBlock = document.getElementById('game-rule');
+
+const setColorShowButton = document.getElementById('set-color-right');
+const setColorHideButton = document.getElementById('set-color-down');
+const setColorBlock = document.getElementById('set-color');
+
+const setSoundShowButton = document.getElementById('set-sound-right');
+const setSoundHideButton = document.getElementById('set-sound-down');
+const setSoundBlock = document.getElementById('set-sound');
+
+const soundOn = document.getElementById('sound-on');
+const soundOff = document.getElementById('sound-off');
+soundOn.checked = true;
+
+
+//FUNCTIONS ON "MAIN SCREEN"
 
 //function to get random hand sign for computer
 function getRandomHandSign() {
@@ -78,7 +101,7 @@ displayRule = (sign1, sign2) => {
 
 //function to play the game
 game = (playerChoice) => {
-  disableClick('none');
+  disableEnableClick('none');
   clearInterval(rotatePlayerHandSign);
   clearInterval(rotateComputerHandSign);
   const computerChoice = getRandomHandSign();
@@ -89,7 +112,7 @@ game = (playerChoice) => {
 };
 
 //function to change handsigns between clickable and disabled
-const disableClick = function (state) {
+const disableEnableClick = function (state) {
   const handSigns = document.getElementsByClassName('sign');
   const len = handSigns.length;
   for(i = 0 ; i < len; i++){
@@ -97,7 +120,7 @@ const disableClick = function (state) {
   }
 }
 
-//function to clear score
+//function to continue the game after selecting a sign
 const clearGame = function () {
   rotatePlayerHandSign = setInterval(function () {
     rotateImages(playerHandSign);
@@ -106,7 +129,7 @@ const clearGame = function () {
     rotateImages(computerHandSign);
   }, 300);
   rule.innerHTML = '';
-
+  disableEnableClick('auto');
 };
 
 //function to earn points
@@ -133,15 +156,15 @@ const clearGame = function () {
 
     if (playerScoreInt < 3 && computerScoreInt < 3) {
       setTimeout(() => {clearGame()}, 1500);
-      console.log('I am here');
     } else {
       selectWinner(playerScoreInt, computerScoreInt);
     }
-    disableClick('auto');
   };
 
   //function to select a winner
   selectWinner = (player, computer) => {
+    myMusic.pause();
+
     let display;
     let sound;
       if (player == computer) {
@@ -157,10 +180,17 @@ const clearGame = function () {
     
       message.innerHTML = display;
       playSound(sound);
+      setTimeout(() => {playMymusic(myMusic)}, 2000);
       startGameButton.innerHTML = 'Play again';
       infoBlock.style.display = 'block';
       backdrop.style.display = 'block';
   }
+//function to play main music
+  const playMymusic = function (myMusic) {
+    if (soundOn.checked) {
+      myMusic.play();
+    }
+  };
 
 //function to select playing sound
 const playSound = function (sound) {
@@ -171,7 +201,8 @@ const playSound = function (sound) {
   }
 };
 
-// event listeners
+
+// EVENT LISTENERS ON "MAIN SCREEN"
 document.addEventListener('click', (e) => {
   signs.forEach((sign) => {
     if (e.target.id == sign.name) {
@@ -189,14 +220,14 @@ settingsButton2.addEventListener('click', function() {
 });
 
 startGameButton.addEventListener('click', function () {
+  playMymusic(myMusic);
   infoBlock.style.display = 'none';
   backdrop.style.display = 'none';
   rule.innerHTML = '';
-
-
   pScore.innerHTML = '0';
   cScore.innerHTML = '0';
 
+  disableEnableClick('auto');
 
   rotatePlayerHandSign = setInterval(function () {
     rotateImages(playerHandSign);
@@ -205,28 +236,6 @@ startGameButton.addEventListener('click', function () {
     rotateImages(computerHandSign);
   }, 300);
 });
-
-
-// SETTINGS BLOCK
-
-const backButton = document.getElementById('back-button');
-
-const ruleShowButton = document.getElementById('rule-right');
-const ruleHideButton = document.getElementById('rule-down');
-const ruleBlock = document.getElementById('game-rule');
-
-const setColorShowButton = document.getElementById('set-color-right');
-const setColorHideButton = document.getElementById('set-color-down');
-const setColorBlock = document.getElementById('set-color');
-
-const setSoundShowButton = document.getElementById('set-sound-right');
-const setSoundHideButton = document.getElementById('set-sound-down');
-const setSoundBlock = document.getElementById('set-sound');
-
-const soundOn = document.getElementById('sound-on');
-const soundOff = document.getElementById('sound-off');
-
-soundOn.checked = true;
 
 
 //FUNCTIONS FOR SETTINGS BLOCK
@@ -303,5 +312,26 @@ document.addEventListener('click', (e) => {
       changeColor(color.id);
     }
   });
+});
+
+// document.addEventListener('click', (e) => {
+//   const colors = [
+//     { name: 'blue', id: '#3385ff' },
+//     { name: 'orange', id: '#fcb110' },
+//     { name: 'red', id: '#e60000' }
+//   ];
+//   colors.forEach((color) => {
+//     if (e.target.id == color.name) {
+//       changeColor(color.id);
+//     }
+//   });
+// });
+
+soundOff.addEventListener('click', () => {
+  myMusic.pause();
+});
+
+soundOn.addEventListener('click', () => {
+  myMusic.play();
 });
 

@@ -14,7 +14,7 @@
   <script src="js/index.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<body>
+<body id="body">
   <div id="container" class="mainColor">
     <div id="backdrop"></div>
     
@@ -61,9 +61,9 @@
       </div>
 
       <div id="set-color" class="settings-borderWithShadow">
-            <div class="color borderWithoutShadow" id="red"></div>
-            <div class="color borderWithoutShadow" id="orange"></div>
-            <div class="color borderWithoutShadow" id="blue"></div>
+            <div class="color borderWithoutShadow" id="color1"></div>
+            <div class="color borderWithoutShadow" id="color2"></div>
+            <div class="color borderWithoutShadow" id="color3"></div>
       </div>
 
       <br><div class="toggle-div settings-borderWithShadow">
@@ -73,9 +73,9 @@
       </div>
 
       <div id="set-sound" class="settings-borderWithShadow">
-        <input type="radio" class="radio" id="sound-on" name="sound" value="on">
+        <input type="radio" class="radio" id="sound-on" name="sound">
         <label for="on">Sound on</label><br>
-        <input type="radio" class="radio" id="sound-off" name="sound" value="off">
+        <input type="radio" class="radio" id="sound-off" name="sound">
         <label for="off">Sound off</label><br>
       </div>
 
@@ -83,7 +83,7 @@
     
     <div id="infoBlock" class="mainColor2">
       <p class="textStyle2" id="message">Play now!</p>
-      <button id="startButton" class="mainColor borderWithShadow textStyle1">START</button>
+      <button id="startButton" class="mainColor changeTextColor borderWithShadow  ">START</button>
     </div>
 
     <div id="settings">
@@ -97,7 +97,7 @@
     </div>
 
 
-    <h1>Rock Paper Scissors Lizard Spock</h1>
+    <h1 class="changeTextColor">Rock Paper Scissors Lizard Spock</h1>
     <div id="players-block" class="borderWithShadow mainColor2">
       <div class="player-block">
         <p class="textStyle2">You: <span id="player-score">0</span></p>
@@ -125,6 +125,8 @@
       </ul>
     </div>
   </div>
+<audio id="main" src="audio/main.wav" loop="loop"></audio>
+
   <script src="js/app.js"></script>
 </body>
 

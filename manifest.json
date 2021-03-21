@@ -3,8 +3,9 @@
     "short_name": "RPSLS",
     "start_url": "index.html",
     "display": "standalone",
-    "background_color": "#FCB110",
+    "background_color": "#292828",
     "theme_color": "#FCB110",
+    "font_color": "#ffffff",
     "orientation": "any",
     "icons": [
         {

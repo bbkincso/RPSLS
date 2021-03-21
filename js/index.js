@@ -19,6 +19,26 @@ const pScore = document.getElementById('player-score');
 const cScore = document.getElementById('computer-score');
 const myMusic = document.getElementById('main');
 
+// FOR SETTINGS BLOCK
+const backButton = document.getElementById('back-button');
+
+const ruleShowButton = document.getElementById('rule-right');
+const ruleHideButton = document.getElementById('rule-down');
+const ruleBlock = document.getElementById('game-rule');
+
+const setColorShowButton = document.getElementById('set-color-right');
+const setColorHideButton = document.getElementById('set-color-down');
+const setColorBlock = document.getElementById('set-color');
+
+const setSoundShowButton = document.getElementById('set-sound-right');
+const setSoundHideButton = document.getElementById('set-sound-down');
+const setSoundBlock = document.getElementById('set-sound');
+
+const soundOn = document.getElementById('sound-on');
+const soundOff = document.getElementById('sound-off');
+soundOn.checked = true;
+
+
 const signs = [
   { name: 'lizard', defeates: ['paper', 'spock'] },
   { name: 'rock', defeates: ['scissors', 'lizard'] },
@@ -40,25 +60,6 @@ const rules = [
   'spock vaporizes rock',
   'rock crushes scissors'
 ];
-
-// FOR SETTINGS BLOCK
-const backButton = document.getElementById('back-button');
-
-const ruleShowButton = document.getElementById('rule-right');
-const ruleHideButton = document.getElementById('rule-down');
-const ruleBlock = document.getElementById('game-rule');
-
-const setColorShowButton = document.getElementById('set-color-right');
-const setColorHideButton = document.getElementById('set-color-down');
-const setColorBlock = document.getElementById('set-color');
-
-const setSoundShowButton = document.getElementById('set-sound-right');
-const setSoundHideButton = document.getElementById('set-sound-down');
-const setSoundBlock = document.getElementById('set-sound');
-
-const soundOn = document.getElementById('sound-on');
-const soundOff = document.getElementById('sound-off');
-soundOn.checked = true;
 
 
 //FUNCTIONS ON "MAIN SCREEN"
@@ -180,17 +181,48 @@ const clearGame = function () {
     
       message.innerHTML = display;
       playSound(sound);
-      setTimeout(() => {playMymusic(myMusic)}, 2000);
+      setTimeout(() => {playMymusic(myMusic)}, 3000);
       startGameButton.innerHTML = 'Play again';
       infoBlock.style.display = 'block';
       backdrop.style.display = 'block';
   }
 
 
+//FUNCTIONS FOR SETTINGS BLOCK
 
+//function to hide block
+const hideBlock = function (myBlock, imgShow, imgHide) {
+  $(myBlock).hide(600);
+  imgShow.style.display = 'inline-block';
+  imgHide.style.display = 'none';
+};
 
+//function to show hidden block
+const showBlock = function (myBlock, imgShow, imgHide) {
+  $(myBlock).show(600);
+  imgShow.style.display = 'inline-block';
+  imgHide.style.display = 'none';
+};
 
-  
+//function to change color
+const changeColor = function (mainColor, mainColor2, changeTextColor) {
+  const coloredElements = document.getElementsByClassName('mainColor');
+  const coloredElements2 = document.getElementsByClassName('mainColor2');
+  const coloredElements3 = document.getElementsByClassName('changeTextColor');
+
+  for(i = 0 ; i < coloredElements.length; i++){
+    coloredElements[i].style.backgroundColor = mainColor;
+  }
+
+  for(i = 0 ; i < coloredElements2.length; i++){
+    coloredElements2[i].style.backgroundColor = mainColor2;
+  }
+
+  for(i = 0 ; i < coloredElements3.length; i++){
+    coloredElements3[i].style.color = changeTextColor;
+  }
+};
+
 //function to play main music
   const playMymusic = function (myMusic) {
     if (soundOn.checked) {
@@ -244,40 +276,7 @@ startGameButton.addEventListener('click', function () {
 });
 
 
-//FUNCTIONS FOR SETTINGS BLOCK
 
-//function to hide block
-const hideBlock = function (myBlock, imgShow, imgHide) {
-  $(myBlock).hide(600);
-  imgShow.style.display = 'inline-block';
-  imgHide.style.display = 'none';
-};
-
-//function to show hidden block
-const showBlock = function (myBlock, imgShow, imgHide) {
-  $(myBlock).show(600);
-  imgShow.style.display = 'inline-block';
-  imgHide.style.display = 'none';
-};
-
-//function to change color
-const changeColor = function (mainColor, mainColor2, changeTextColor) {
-  const coloredElements = document.getElementsByClassName('mainColor');
-  const coloredElements2 = document.getElementsByClassName('mainColor2');
-  const coloredElements3 = document.getElementsByClassName('changeTextColor');
-
-  for(i = 0 ; i < coloredElements.length; i++){
-    coloredElements[i].style.backgroundColor = mainColor;
-  }
-
-  for(i = 0 ; i < coloredElements2.length; i++){
-    coloredElements2[i].style.backgroundColor = mainColor2;
-  }
-
-  for(i = 0 ; i < coloredElements3.length; i++){
-    coloredElements3[i].style.color = changeTextColor;
-  }
-};
 
 
 // EVENT LISTENERS FOR SETTINGS BLOCK

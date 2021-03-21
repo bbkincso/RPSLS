@@ -23,7 +23,7 @@
 
 #back-button {
   background-color: transparent;
-  width: 1.7rem;
+  width: 1.9rem;
   padding: 0 15%;
 }
 
@@ -46,8 +46,8 @@
   display: inline-block;
   vertical-align: middle;
   border: none;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
   background: transparent;
   cursor: pointer;
   margin: 0 5% 0 5%;
@@ -105,8 +105,8 @@
 }
 
 .color {
-  width: 2.3rem;
-  height: 2.3rem;
+  width: 2.7rem;
+  height: 2.7rem;
   border-radius: 50%;
   margin: 15% auto;
 }
@@ -162,8 +162,8 @@
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  height: 1rem;
-  width: 1rem;
+  height: 1.2rem;
+  width: 1.2rem;
   background-color: transparent;
   border: 1px solid #292828;
   border-radius: 50%;
@@ -193,10 +193,10 @@
 
 /* Style the indicator (dot/circle) */
 .myRadioButton .checkmark:after {
- 	top: 0.25rem;
-	left: 0.25rem;
-	width: 0.5rem;
-	height: 0.5rem;
+ 	top: 0.4rem;
+	left: 0.4rem;
+	width: 0.4rem;
+	height: 0.4rem;
 	border-radius: 50%;
 	background: white;
 }
@@ -509,8 +509,8 @@
   .color {
     display: inline-block;
     cursor: pointer;
-    width: 2rem;
-    height: 2rem;
+    width: 2.7rem;
+    height: 2.7rem;
     border-radius: 50%;
     margin: 10% 5%;
   }

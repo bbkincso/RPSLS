@@ -38,7 +38,7 @@ h1 {
   display: block;
   width: 90%;
   margin: auto;
-  padding: 15% 0 10% 0;
+  padding-top: 20%;
   text-align: center;
   font-size: 1.4rem;
 }
@@ -69,7 +69,7 @@ ul {
 }
 
 body {
-  background-color: #fcb110;
+  /* background-color: #fcb110; */
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -133,13 +133,13 @@ body {
 #settings {
   z-index: 2;
   position: absolute;
-  top: 2%;
+  top: 5%;
   left: 2%;
 }
 
 .settings-button {
   width: 2.2rem;
-  padding-top: 0;
+  padding-top: 1%;
   padding-bottom: 0;
 }
 
@@ -214,7 +214,7 @@ body {
 
   h1 {
     font-size: 1.2rem;
-    padding: 5% 0 0 2%;
+    padding: 7% 0 0 2%;
     width: 40%;
     float: left;
   }

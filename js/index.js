@@ -185,6 +185,12 @@ const clearGame = function () {
       infoBlock.style.display = 'block';
       backdrop.style.display = 'block';
   }
+
+
+
+
+
+  
 //function to play main music
   const playMymusic = function (myMusic) {
     if (soundOn.checked) {
@@ -255,11 +261,21 @@ const showBlock = function (myBlock, imgShow, imgHide) {
 };
 
 //function to change color
-const changeColor = function (color) {
+const changeColor = function (mainColor, mainColor2, changeTextColor) {
   const coloredElements = document.getElementsByClassName('mainColor');
-  const len = coloredElements.length;
-  for(i = 0 ; i < len; i++){
-    coloredElements[i].style.backgroundColor = color;
+  const coloredElements2 = document.getElementsByClassName('mainColor2');
+  const coloredElements3 = document.getElementsByClassName('changeTextColor');
+
+  for(i = 0 ; i < coloredElements.length; i++){
+    coloredElements[i].style.backgroundColor = mainColor;
+  }
+
+  for(i = 0 ; i < coloredElements2.length; i++){
+    coloredElements2[i].style.backgroundColor = mainColor2;
+  }
+
+  for(i = 0 ; i < coloredElements3.length; i++){
+    coloredElements3[i].style.color = changeTextColor;
   }
 };
 
@@ -303,29 +319,17 @@ setSoundHideButton.addEventListener('click', () => {
 
 document.addEventListener('click', (e) => {
   const colors = [
-    { name: 'blue', id: '#3385ff' },
-    { name: 'orange', id: '#fcb110' },
-    { name: 'red', id: '#e60000' }
+    { name: 'black', maincolor: '#000000', mainColor2: '#f7f7f7', changeTextColor: '#f7f7f7'},
+    { name: 'orange', maincolor: '#fcb110', mainColor2: '#fff5e6', changeTextColor: '#292828'},
+    { name: 'blue', maincolor: '#005580', mainColor2: '#f0faff', changeTextColor: '#ffffff'},
   ];
+
   colors.forEach((color) => {
     if (e.target.id == color.name) {
-      changeColor(color.id);
+      changeColor(color.maincolor, color.mainColor2, color.changeTextColor);
     }
   });
 });
-
-// document.addEventListener('click', (e) => {
-//   const colors = [
-//     { name: 'blue', id: '#3385ff' },
-//     { name: 'orange', id: '#fcb110' },
-//     { name: 'red', id: '#e60000' }
-//   ];
-//   colors.forEach((color) => {
-//     if (e.target.id == color.name) {
-//       changeColor(color.id);
-//     }
-//   });
-// });
 
 soundOff.addEventListener('click', () => {
   myMusic.pause();

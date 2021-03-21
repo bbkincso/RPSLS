@@ -12,24 +12,15 @@
 }
 
 .mainColor {
-  /* background-color: #fcb110;   */
-  /* background-color: black; */
-  background-color: #005580;
-
-
+  background-color: #fcb110;  
 }
 
 .mainColor2 {
-  /* background-color: #fff5e6; */
-  /* background-color: #f7f7f7; */
-  background-color: #f0faff;
-
+  background-color: #fff5e6;
 }
 
 .changeTextColor {
-  /* color: #292828; */
-  /* color: #f7f7f7; */
-  color: white;
+  color: #292828;
 }
 
 .textStyle1 {
@@ -186,7 +177,7 @@ body {
 }
 
 .player-block p {
-  padding: 5%;
+  padding-top: 5%;
 }
 
 .selectedSigns {
@@ -452,7 +443,7 @@ body {
 
 @media (min-height: 751px) and (max-height: 900px) {
   body {
-    background-color: #fff5e6;
+    background-color: white;
   }
 
   #container {
@@ -482,7 +473,7 @@ body {
   }
 
   .player-block p {
-    padding: 10%;
+    padding-top: 10%;
     font-size: 1.1rem;
   }
 
@@ -524,7 +515,7 @@ body {
 
 @media (min-height: 901px) and (max-height: 1000px) {
   body {
-    background-color: #fff5e6;
+    background-color: white;
   }
 
   #container {
@@ -554,7 +545,7 @@ body {
   }
 
   .player-block p {
-    padding: 10%;
+    padding-top: 10%;
     font-size: 1.3rem;
   }
 
@@ -597,7 +588,7 @@ body {
 
 @media (min-height: 1001px) and (max-height: 1100px) {
   body {
-    background-color: #fff5e6;
+    background-color: white;
   }
 
   #container {
@@ -627,7 +618,7 @@ body {
   }
 
   .player-block p {
-    padding: 10%;
+    padding-top: 10%;
     font-size: 1.3rem;
   }
 
@@ -670,7 +661,7 @@ body {
 
 @media (min-height: 1101px) {
   body {
-    background-color: #fff5e6;
+    background-color: white;
   }
 
   #container {
@@ -701,7 +692,7 @@ body {
   }
 
   .player-block p {
-    padding: 10%;
+    padding-top: 10%;
     font-size: 1.4rem;
   }
 

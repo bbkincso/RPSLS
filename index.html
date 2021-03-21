@@ -14,7 +14,7 @@
   <script src="js/index.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<body id="body">
+<body class=".maincolor">
   <div id="container" class="mainColor">
     <div id="backdrop"></div>
     
@@ -61,9 +61,11 @@
       </div>
 
       <div id="set-color" class="settings-borderWithShadow">
-            <div class="color borderWithoutShadow" id="color1"></div>
-            <div class="color borderWithoutShadow" id="color2"></div>
-            <div class="color borderWithoutShadow" id="color3"></div>
+        <div id="colors">
+          <div class="color borderWithoutShadow" id="black"></div>
+            <div class="color borderWithoutShadow" id="orange"></div>
+            <div class="color borderWithoutShadow" id="blue"></div>
+        </div>
       </div>
 
       <br><div class="toggle-div settings-borderWithShadow">
@@ -73,10 +75,16 @@
       </div>
 
       <div id="set-sound" class="settings-borderWithShadow">
-        <input type="radio" class="radio" id="sound-on" name="sound">
-        <label for="on">Sound on</label><br>
-        <input type="radio" class="radio" id="sound-off" name="sound">
-        <label for="off">Sound off</label><br>
+        <div id="radioButtons">
+          <label class="myRadioButton">Sound on
+            <input type="radio" id="sound-on" name="radio">
+            <span class="checkmark"></span>
+          </label>
+          <label class="myRadioButton">Sound off
+            <input type="radio" id="sound-off" name="radio">
+            <span class="checkmark"></span>
+          </label>
+        </div>
       </div>
 
     </div>

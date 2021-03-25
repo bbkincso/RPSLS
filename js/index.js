@@ -103,6 +103,7 @@ displayRule = (sign1, sign2) => {
 //function to play the game
 game = (playerChoice) => {
   disableEnableClick('none');
+
   clearInterval(rotatePlayerHandSign);
   clearInterval(rotateComputerHandSign);
   const computerChoice = getRandomHandSign();
@@ -116,9 +117,19 @@ game = (playerChoice) => {
 const disableEnableClick = function (state) {
   const handSigns = document.getElementsByClassName('sign');
   const len = handSigns.length;
-  for(i = 0 ; i < len; i++){
-    handSigns[i].style.pointerEvents = state;
+
+  if (state == 'none') {
+    for(i = 0 ; i < len; i++){
+      handSigns[i].style.pointerEvents = state;
+      handSigns[i].style.opacity = '0.3';
+    } 
+    } else {
+      for(i = 0 ; i < len; i++){
+        handSigns[i].style.pointerEvents = state;
+        handSigns[i].style.opacity = '1';
+      }
   }
+  
 }
 
 //function to continue the game after selecting a sign
@@ -156,7 +167,7 @@ const clearGame = function () {
     cScore.innerText = computerScoreInt.toString();
 
     if (playerScoreInt < 3 && computerScoreInt < 3) {
-      setTimeout(() => {clearGame()}, 3000);
+      setTimeout(() => {clearGame()}, 2500);
     } else {
       selectWinner(playerScoreInt, computerScoreInt);
     }
@@ -164,8 +175,6 @@ const clearGame = function () {
 
   //function to select a winner
   selectWinner = (player, computer) => {
-    myMusic.pause();
-
     let display;
     let sound;
       if (player == computer) {
@@ -222,13 +231,6 @@ const changeColor = function (mainColor, mainColor2, changeTextColor) {
   }
 };
 
-//function to play main music
-  const playMymusic = function (myMusic) {
-    if (soundOn.checked) {
-      myMusic.play();
-    }
-  };
-
 //function to select playing sound
 const playSound = function (sound) {
   const myAudio = document.createElement('audio');
@@ -257,7 +259,6 @@ settingsButton2.addEventListener('click', function() {
 });
 
 startGameButton.addEventListener('click', function () {
-  playMymusic(myMusic);
   infoBlock.style.display = 'none';
   backdrop.style.display = 'none';
   rule.innerHTML = '';
@@ -330,10 +331,10 @@ document.addEventListener('click', (e) => {
 });
 
 soundOff.addEventListener('click', () => {
-  myMusic.pause();
+  soundOn.checked = false;
 });
 
 soundOn.addEventListener('click', () => {
-  myMusic.play();
+  soundOn.checked = true;
 });
 

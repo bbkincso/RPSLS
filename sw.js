@@ -17,8 +17,7 @@ const assets = [
     'images/arrow-left-solid',
     'audio/won.wav',
     'audio/lost.wav',
-    'audio/draw.wav',
-    'audio/main.wav'
+    'audio/draw.wav'
 ];
 
 

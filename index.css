@@ -139,6 +139,7 @@ body {
 .settings-button {
   width: 2.2rem;
   padding-top: 1%;
+  background: transparent;
 }
 
 #settings-button_desktop {
@@ -153,7 +154,7 @@ body {
 .settings-button_bar {
   width: 100%;
   height: 0.2rem;
-  background: #292828;
+  background: white;
   display: block;
   margin: 0.2rem 0;
 }

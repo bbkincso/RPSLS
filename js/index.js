@@ -156,7 +156,7 @@ const clearGame = function () {
     cScore.innerText = computerScoreInt.toString();
 
     if (playerScoreInt < 3 && computerScoreInt < 3) {
-      setTimeout(() => {clearGame()}, 1500);
+      setTimeout(() => {clearGame()}, 3000);
     } else {
       selectWinner(playerScoreInt, computerScoreInt);
     }
@@ -181,7 +181,6 @@ const clearGame = function () {
     
       message.innerHTML = display;
       playSound(sound);
-      setTimeout(() => {playMymusic(myMusic)}, 3000);
       startGameButton.innerHTML = 'Play again';
       infoBlock.style.display = 'block';
       backdrop.style.display = 'block';

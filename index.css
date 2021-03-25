@@ -12,7 +12,7 @@
 }
 
 .mainColor {
-  background-color: #fcb110;  
+  background-color: #fcb110;
 }
 
 .mainColor2 {
@@ -38,7 +38,8 @@ h1 {
   display: block;
   width: 90%;
   margin: auto;
-  padding-top: 20%;
+  margin-top: 22%;
+  margin-bottom: 8%;
   text-align: center;
   font-size: 1.4rem;
 }
@@ -69,23 +70,22 @@ ul {
 }
 
 body {
-  /* background-color: #fcb110; */
+  background-color: #292828;
   width: 100vw;
   height: 100vh;
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
 }
 
 #container {
-  position: relative;
+  position: absolute;
   height: 100vh;
-  max-height: 1240px;
+  max-height: 900px;
   width: 100vw;
-  max-width: 920px;
   margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #backdrop {
@@ -104,7 +104,6 @@ body {
   width: 90%;
   max-width: 650px;
   height: 30%;
-  max-height: 370px;
   left: 50%;
   transform: translateX(-50%);
   bottom: 3%;
@@ -116,7 +115,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 20%;
+  top: 25%;
 }
 
 #startButton {
@@ -126,21 +125,20 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 25%;
+  bottom: 28%;
   font-family: "Poppins", sans-serif;
 }
 
 #settings {
   z-index: 2;
   position: absolute;
-  top: 5%;
-  left: 2%;
+  top: 4%;
+  left: 4%;
 }
 
 .settings-button {
   width: 2.2rem;
   padding-top: 1%;
-  padding-bottom: 0;
 }
 
 #settings-button_desktop {
@@ -163,26 +161,21 @@ body {
 #players-block {
   width: 90%;
   max-width: 650px;
-  height: 30%;
-  max-height: 350px;
+  height: 35%;
   margin: auto;
-  padding-top: 20%;
   text-align: center;
 }
 
 .player-block {
   display: inline-block;
   text-align: center;
-  margin: 0 0.5rem;
-}
-
-.player-block p {
-  padding-top: 5%;
+  margin: 13% 0.5rem 0 0.5rem;
 }
 
 .selectedSigns {
   width: 5.5rem;
   height: 5.5rem;
+  margin: 10px 0;
 }
 
 #selection {
@@ -190,33 +183,40 @@ body {
   width: 90%;
   max-width: 650px;
   height: 30%;
-  max-height: 370px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   bottom: 3%;
 }
 
-#selection li {
-  display: inline-block;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin: 0.3rem;
-  cursor: pointer;
-
+#selection p {
+  margin-top: 7%;
 }
 
-/* place selection on the side in landscape */
-@media (orientation: landscape) and (max-height: 350px) {
+#selection li {
+  display: inline-block;
+  width: 2.7rem;
+  height: 2.7rem;
+  margin: 0.3rem;
+  cursor: pointer;
+}
+
+/* landscape for smart phones */
+@media only screen and (orientation: landscape) and (max-width: 767px) {
   #container {
+    max-height: 400px;
     max-width: 850px;
   }
 
   h1 {
     font-size: 1.2rem;
-    padding: 7% 0 0 2%;
+    margin: 7% 0 0 2%;
     width: 40%;
     float: left;
+  }
+
+  #settings {
+    left: 2%;
   }
 
   #players-block {
@@ -229,11 +229,11 @@ body {
   }
 
   .player-block {
-    padding-top: 13%;
+    margin-top: 13%;
   }
 
   #rule {
-    padding-top: 3%;
+    margin-top: 3%;
   }
 
   .selectedSigns {
@@ -252,7 +252,16 @@ body {
 
   #selection p {
     font-size: 0.8rem;
-    padding-top: 5%;
+    margin-top: 5%;
+  }
+
+  ul {
+    margin-top: 2%;
+  }
+
+  #selection li {
+    width: 2.7rem;
+    height: 2.7rem;
   }
 
   #infoBlock {
@@ -264,106 +273,134 @@ body {
   }
 }
 
-@media (orientation: landscape) and (min-height: 351px) and (max-height: 450px) {
+/* landscape for tablets */
+@media only screen and (orientation: landscape) and (min-width: 768px) and (max-width: 990px) {
   #container {
-    max-width: 800px;
+    max-height: 500px;
+    /* max-width: 1000px; */
   }
 
   h1 {
-    position: absolute;
-    left: 2%;
-    top: 15%;
-    padding: 0;
+    font-size: 1.5rem;
+    margin: 10% 0 0 2%;
     width: 40%;
     float: left;
   }
 
+  #settings {
+    left: 3%;
+  }
+
+  .settings-button_bar {
+    height: 0.35rem;
+    margin: 0.2rem 0;
+  }
+
+  .settings-button {
+    width: 3rem;
+    padding-top: 1%;
+  }
+
   #players-block {
     position: absolute;
-    right: 2%;
+    right: 3%;
     width: 50%;
-    height: 75%;
-    max-height: 600px;
+    height: 80%;
     padding: 0;
-    top: 10%;
+    top: 8%;
   }
 
   .player-block {
-    padding-top: 15%;
+    margin: 18% 2% 0 2%;
+  }
+
+  .player-block p {
+    font-size: 1.2rem;
   }
 
   #rule {
-    padding-top: 3%;
+    margin-top: 3%;
+    font-size: 1.2rem;
   }
 
   .selectedSigns {
-    width: 6.5rem;
-    height: 6.5rem;
+    width: 8rem;
+    height: 8rem;
   }
 
   #selection {
-    margin-left: 2%;
-    bottom: 15%;
-    height: 45%;
+    margin-left: 3%;
+    height: 50%;
     width: 40%;
     left: 0;
     transform: translateX(0%);
+    bottom: 10%;
   }
 
   #selection p {
-    padding-top: 3%;
+    font-size: 1.1rem;
+    margin-top: 10%;
+  }
+
+  #selection li {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 1%;
   }
 
   #infoBlock {
     width: 40%;
-    height: 45%;
-    left: 2%;
+    height: 50%;
+    left: 3%;
     transform: translateX(0%);
-    bottom: 15%;
+    bottom: 10%;
+  }
+
+  #message {
+    font-size: 1.5rem;
+    left: 50%;
+    top: 30%;
+  }
+
+  #startButton {
+    font-size: 1.3rem;
+    bottom: 30%;
   }
 }
 
-@media (orientation: landscape) and (min-height: 451px) and (max-height: 600px) {
+/* portrait for tablets */
+@media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 990px) {
   #container {
-    max-width: 850px;
-  }
-
-  #settings {
-    top: 3%;
-    left: 3%;
+    max-height: 800px;
+    max-width: 500px;
+    border: 1px solid #292828;
   }
 
   h1 {
-    position: absolute;
-    left: 2%;
-    top: 15%;
-    font-size: 1.6rem;
-    padding: 0;
-    width: 40%;
-    float: left;
+    margin-top: 15%;
+    font-size: 1.5rem;
   }
 
-  #players-block {
-    position: absolute;
-    right: 2%;
-    width: 50%;
-    height: 75%;
-    max-height: 600px;
-    padding: 0;
-    top: 10%;
+  .settings-button {
+    width: 2.5rem;
+  }
+  .settings-button_bar {
+    height: 0.25rem;
   }
 
   .player-block {
-    padding-top: 20%;
+    margin-top: 10%;
+    margin-right: 2rem;
   }
 
   .player-block p {
+    margin-top: 3%;
     font-size: 1.1rem;
   }
 
   #rule {
-    padding-top: 3%;
-    font-size: 1rem;
+    margin-top: 2%;
+    font-size: 1.1rem;
   }
 
   .selectedSigns {
@@ -371,212 +408,19 @@ body {
     height: 7.5rem;
   }
 
-  #selection {
-    margin-left: 2%;
-    bottom: 15%;
-    height: 40%;
-    width: 40%;
-    left: 0;
-    transform: translateX(0%);
-  }
-
-  #selection p {
-    padding: 3% 0 2% 0;
-  }
-
-  #selection ul {
-    padding: 2% 0 0 0;
-    width: 70%;
-    margin: auto;
-  }
-
-  #infoBlock {
-    width: 40%;
-    height: 40%;
-    left: 2%;
-    transform: translateX(0%);
-    bottom: 15%;
-  }
-}
-
-@media (min-height: 601px) and (max-height: 750px) {
-  #container {
-    max-width: 300px;
-  }
-
-  h1 {
-    padding: 20% 0 10% 0;
-  }
-
-  #players-block {
-    padding: 13% 0 2% 0;
-  }
-
-  .player-block p {
-    font-size: 1rem;
-  }
-
-  #rule {
-    padding-top: 4%;
-    font-size: 1rem;
-  }
-
-  .selectedSigns {
-    width: 5.5rem;
-    height: 5.5rem;
-  }
-
   #message {
-    top: 25%;
-  }
-
-  #selection p {
-    font-size: 1rem;
-    padding: 10% 0 4% 0;
-  }
-
-  #selection ul {
-    width: 80%;
-    margin: auto;
-  }
-}
-
-@media (min-height: 751px) and (max-height: 900px) {
-  body {
-    background-color: white;
-  }
-
-  #container {
-    max-width: 500px;
-    border: 1px solid #292828;
-  }
-
-  #settings-button_desktop {
-    display: block;
-  }
-
-  #settings-button_mobile {
-    display: none;
-  }
-
-  h1 {
-    padding: 13% 0 8% 0;
     font-size: 1.6rem;
-  }
-
-  #players-block {
-    padding: 7% 0 2% 0;
-  }
-
-  .player-block {
-    margin: 0rem 1.6rem;
-  }
-
-  .player-block p {
-    padding-top: 10%;
-    font-size: 1.1rem;
-  }
-
-  #rule {
-    padding-top: 4%;
-    font-size: 1.1rem;
-  }
-
-  .selectedSigns {
-    width: 6.5rem;
-    height: 6.5rem;
-  }
-
-  #message {
-    font-size: 1.4rem;
-    top: 25%;
+    top: 30%;
   }
 
   #startButton {
     padding: 0.6rem 2.5rem;
-    bottom: 28%;
+    bottom: 35%;
   }
 
   #selection p {
     font-size: 1.1rem;
-    padding-top: 10%;
-  }
-
-  #selection ul {
-    padding: 2% 0 0 0;
-  }
-
-  #selection li {
-    width: 3rem;
-    height: 3rem;
-    margin: 0.5rem;
-  }
-}
-
-@media (min-height: 901px) and (max-height: 1000px) {
-  body {
-    background-color: white;
-  }
-
-  #container {
-    max-width: 600px;
-    border: 1px solid #292828;
-  }
-
-  #settings-button_desktop {
-    display: block;
-  }
-
-  #settings-button_mobile {
-    display: none;
-  }
-
-  h1 {
-    padding: 13% 0 8% 0;
-    font-size: 1.9rem;
-  }
-
-  #players-block {
-    padding: 10% 0 3% 0;
-  }
-
-  .player-block {
-    margin: 0rem 1.8rem;
-  }
-
-  .player-block p {
-    padding-top: 10%;
-    font-size: 1.3rem;
-  }
-
-  #rule {
-    padding-top: 5%;
-    font-size: 1.3rem;
-  }
-
-  .selectedSigns {
-    width: 7rem;
-    height: 7rem;
-  }
-
-  #message {
-    font-size: 1.7rem;
-    top: 25%;
-  }
-
-  #startButton {
-    font-size: 1.2rem;
-    padding: 0.6rem 2.5rem;
-    bottom: 30%;
-  }
-
-  #selection p {
-    font-size: 1.2rem;
-    padding-top: 10%;
-  }
-
-  #selection ul {
-    padding-top: 2%;
+    margin: 10% 0 5% 0;
   }
 
   #selection li {
@@ -586,14 +430,18 @@ body {
   }
 }
 
-@media (min-height: 1001px) and (max-height: 1100px) {
-  body {
-    background-color: white;
+/* laptops */
+@media only screen and (min-width: 991px) {
+  #container {
+    max-height: 900px;
+    max-width: 600px;
   }
 
-  #container {
-    max-width: 700px;
-    border: 1px solid #292828;
+  h1 {
+    margin-top: 16%;
+    margin-bottom: 8%;
+    width: 70%;
+    font-size: 1.8rem;
   }
 
   #settings-button_desktop {
@@ -604,52 +452,34 @@ body {
     display: none;
   }
 
-  h1 {
-    padding: 12% 0 8% 0;
-    font-size: 2.2rem;
-  }
-
-  #players-block {
-    padding: 10% 0 3% 0;
-  }
-
   .player-block {
-    margin: 0rem 2rem;
+    margin: 8% 5% 2% 5%;
   }
 
   .player-block p {
-    padding-top: 10%;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   #rule {
-    padding-top: 5%;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .selectedSigns {
-    width: 8rem;
-    height: 8rem;
+    width: 7rem;
+    height: 7rem;
   }
 
   #message {
-    font-size: 2rem;
-    top: 25%;
+    font-size: 1.7rem;
   }
 
   #startButton {
     font-size: 1.3rem;
-    padding: 0.6rem 2.5rem;
-    bottom: 30%;
   }
 
   #selection p {
-    font-size: 1.3rem;
-    padding-top: 10%;
-  }
-
-  #selection ul {
-    padding-top: 2%;
+    font-size: 1.2rem;
+    margin: 10% 0 0 0;
   }
 
   #selection li {
@@ -659,18 +489,16 @@ body {
   }
 }
 
-@media (min-height: 1101px) {
-  body {
-    background-color: white;
-  }
-
+/* larger screens */
+@media only screen and (min-width: 1500px) {
   #container {
-    max-width: 800px;
-    border: 1px solid #292828;
+    max-height: 1300px;
+    max-width: 1000px;
   }
 
   #settings-button_desktop {
     display: block;
+    width: 3.5rem;
   }
 
   #settings-button_mobile {
@@ -678,57 +506,46 @@ body {
   }
 
   h1 {
-    padding: 13% 0 8% 0;
-    width: 70%;
-    font-size: 2.2rem;
-  }
-
-  #players-block {
-    padding: 10% 0 5% 0;
+    font-size: 2.5rem;
   }
 
   .player-block {
-    margin: 0rem 2rem;
+    margin: 10% 2rem 3% 2rem;
   }
 
   .player-block p {
-    padding-top: 10%;
     font-size: 1.4rem;
+    margin-bottom: 10%;
   }
 
   #rule {
-    padding-top: 5%;
     font-size: 1.4rem;
   }
 
   .selectedSigns {
-    width: 9rem;
-    height: 9rem;
+    width: 10rem;
+    height: 10rem;
   }
 
   #message {
     font-size: 2rem;
-    top: 25%;
+    top: 30%;
   }
 
   #startButton {
-    font-size: 1.3rem;
-    padding: 0.6rem 2.5rem;
-    bottom: 30%;
+    font-size: 1.7rem;
+    padding: 0.6rem 3.5rem;
+    bottom: 35%;
   }
 
   #selection p {
     font-size: 1.5rem;
-    padding-top: 10%;
-  }
-
-  #selection ul {
-    padding-top: 2%;
+    margin-top: 15%;
   }
 
   #selection li {
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
     margin: 0.5rem;
   }
 }

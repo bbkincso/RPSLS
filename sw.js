@@ -11,6 +11,7 @@ const assets = [
     'images/rock.png',
     'images/scissors.png',
     'images/spock.png',
+    'images/favicon.ico',
     'images/cog-solid.png',
     'images/caret-right-solid.png',
     'images/caret-down-solid.png',

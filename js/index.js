@@ -340,7 +340,7 @@ soundOn.addEventListener('click', () => {
 
 function doesConnectionExist() {
   const xhr = new XMLHttpRequest();
-  const file = "https://bbkincso.github.io/RPSLS/1x1.png";
+  const file = "1x1.png";
   const randomNum = Math.round(Math.random() * 10000);
   const warningMessage = document.getElementById('check-internet');
   const video = document.getElementById('game-rule_video');

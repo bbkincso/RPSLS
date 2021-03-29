@@ -24,15 +24,18 @@
           <img src="images/arrow-left-solid.png">
         </button>
       </div>
-      
       <div class="toggle-div settings-borderWithShadow" id="toggle-div-1">
         <button class="toggle-button" id="rule-right"><img src="images/caret-right-solid.png"></button>
         <button class="toggle-button" id="rule-down"><img src="images/caret-down-solid.png"></button>
         <p class="textStyle2">Learn the rules</p>
       </div>
-
       <div id="game-rule" class="settings-borderWithShadow">
-        <iframe id="game-rule_video" src="https://www.youtube.com/embed/_PUEoDYpUyQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div id="videoBlock">
+          <div id="check-internet">
+            <p class="textStyle2">No Internet</p>
+          </div>
+          <iframe id="game-rule_video" src="https://www.youtube.com/embed/_PUEoDYpUyQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>     
         <div id="game-rule_text">
           <div class="text-block">
             <div id="text-block-1">
@@ -100,11 +103,8 @@
           <span class="settings-button_bar borderWithoutShadow"></span>
           <span class="settings-button_bar borderWithoutShadow"></span>
         </button>
-
         <button class="settings-button" id="settings-button_desktop"><img src="images/cog-solid.png"></button>
     </div>
-
-
     <h1 class="changeTextColor">Rock Paper Scissors Lizard Spock</h1>
     <div id="players-block" class="borderWithShadow mainColor2">
       <div class="player-block">
@@ -121,7 +121,6 @@
       </div>
         <p class="textStyle2" id="rule"></p>
     </div>
-
     <div id="selection" class="borderWithShadow mainColor2">
       <p class="textStyle2">Select a sign to play!</p>
       <ul>

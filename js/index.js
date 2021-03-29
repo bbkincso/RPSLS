@@ -338,3 +338,28 @@ soundOn.addEventListener('click', () => {
   soundOn.checked = true;
 });
 
+
+
+//function to check online status
+const checkOnlineStatus = async () => {
+  try {
+    const online = await fetch("/1x1.png");
+      return online.status >= 200 && online.status < 300; 
+  } catch (err) {
+    return false;
+  }
+};
+
+// check every few seconds if internet is available
+setInterval(async () => {
+  const warningMessage = document.getElementById('check-internet');
+  const video = document.getElementById('game-rule_video');
+
+  if(await checkOnlineStatus()) {
+    warningMessage.style.display = 'none';
+    video.style.pointerEvents = 'auto'
+  } else {
+    warningMessage.style.display = 'block';
+    video.style.pointerEvents = 'none'
+  }
+}, 3000); 

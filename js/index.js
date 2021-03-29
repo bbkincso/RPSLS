@@ -363,3 +363,16 @@ setInterval(async () => {
     video.style.pointerEvents = 'none'
   }
 }, 3000); 
+
+window.addEventListener("load", async (event) => {
+  const warningMessage = document.getElementById('check-internet');
+  const video = document.getElementById('game-rule_video');
+
+  if(await checkOnlineStatus()) {
+    warningMessage.style.display = 'none';
+    video.style.pointerEvents = 'auto'
+  } else {
+    warningMessage.style.display = 'block';
+    video.style.pointerEvents = 'none'
+  }
+});

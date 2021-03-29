@@ -338,30 +338,40 @@ soundOn.addEventListener('click', () => {
   soundOn.checked = true;
 });
 
-function doesConnectionExist() {
-  const xhr = new XMLHttpRequest();
-  const file = "1x1.png";
-  const randomNum = Math.round(Math.random() * 10000);
+
+//function to check online status
+const checkOnlineStatus = async () => {
+  try {
+    const online = await fetch("https://bbkincso.github.io/RPSLS/1x1.png?rand=6876");
+      return online.status >= 200 && online.status < 300; 
+  } catch (err) {
+    return false;
+  }
+};
+
+// check every few seconds if internet is available
+setInterval(async () => {
   const warningMessage = document.getElementById('check-internet');
   const video = document.getElementById('game-rule_video');
 
-  xhr.open('HEAD', file + "?rand=" + randomNum, true);
-  xhr.send();
-   
-  xhr.addEventListener("readystatechange", processRequest, false);
-
-  function processRequest(e) {
-    if (xhr.readyState == 4) {
-      if (xhr.status >= 200 && xhr.status < 304) {
-        warningMessage.style.display = 'none';
-        video.style.pointerEvents = 'auto'
-      } else {
-        warningMessage.style.display = 'block';
-        video.style.pointerEvents = 'none'      }
-    }
+  if(await checkOnlineStatus()) {
+    warningMessage.style.display = 'none';
+    video.style.pointerEvents = 'auto'
+  } else {
+    warningMessage.style.display = 'block';
+    video.style.pointerEvents = 'none'
   }
-}
+}, 3000); 
 
-setInterval(() => {
-  doesConnectionExist();
-}, 4000);
+// window.addEventListener("load", async (event) => {
+//   const warningMessage = document.getElementById('check-internet');
+//   const video = document.getElementById('game-rule_video');
+
+//   if(await checkOnlineStatus()) {
+//     warningMessage.style.display = 'none';
+//     video.style.pointerEvents = 'auto'
+//   } else {
+//     warningMessage.style.display = 'block';
+//     video.style.pointerEvents = 'none'
+//   }
+// });

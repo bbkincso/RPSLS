@@ -339,32 +339,31 @@ soundOn.addEventListener('click', () => {
 });
 
 
-//function to check online status
-const checkOnlineStatus = async () => {
-  const myUrl = window.location.href;
-  console.log(myUrl);
-  console.log(myUrl + '1x1.png');
-  try {
-    const online = await fetch(myUrl + '1x1.png');
-      return online.status >= 200 && online.status < 300; 
-  } catch (err) {
-    return false;
-  }
-};
+// //function to check online status
+// const checkOnlineStatus = async () => {
+//   const myUrl = window.location.href;
+//   console.log(myUrl);
+//   try {
+//     const online = await fetch(myUrl + '1x1.png');
+//       return online.status >= 200 && online.status < 300; 
+//   } catch (err) {
+//     return false;
+//   }
+// };
 
-// check every few seconds if internet is available
-setInterval(async () => {
-  const warningMessage = document.getElementById('check-internet');
-  const video = document.getElementById('game-rule_video');
+// // check every few seconds if internet is available
+// setInterval(async () => {
+//   const warningMessage = document.getElementById('check-internet');
+//   const video = document.getElementById('game-rule_video');
 
-  if(await checkOnlineStatus()) {
-    warningMessage.style.display = 'none';
-    video.style.pointerEvents = 'auto'
-  } else {
-    warningMessage.style.display = 'block';
-    video.style.pointerEvents = 'none'
-  }
-}, 3000); 
+//   if(await checkOnlineStatus()) {
+//     warningMessage.style.display = 'none';
+//     video.style.pointerEvents = 'auto'
+//   } else {
+//     warningMessage.style.display = 'block';
+//     video.style.pointerEvents = 'none'
+//   }
+// }, 3000); 
 
 // window.addEventListener("load", async (event) => {
 //   const warningMessage = document.getElementById('check-internet');
@@ -378,3 +377,33 @@ setInterval(async () => {
 //     video.style.pointerEvents = 'none'
 //   }
 // });
+
+
+function doesConnectionExist() {
+  const warningMessage = document.getElementById('check-internet');
+  const video = document.getElementById('game-rule_video');
+  var xhr = new XMLHttpRequest();
+  var file = "https://bbkincso.github.io/RPSLS/1x1.png";
+  var randomNum = Math.round(Math.random() * 10000);
+
+  xhr.open('HEAD', file + "?rand=" + randomNum, true);
+  xhr.send();
+   
+  xhr.addEventListener("readystatechange", processRequest, false);
+
+  function processRequest(e) {
+    if (xhr.readyState == 4) {
+      if (xhr.status >= 200 && xhr.status < 304) {
+        warningMessage.style.display = 'none';
+        video.style.pointerEvents = 'auto'
+      } else {
+        warningMessage.style.display = 'block';
+        video.style.pointerEvents = 'none'
+      }
+    }
+  }
+}
+
+setInterval(() => {
+  doesConnectionExist();
+}, 3000);

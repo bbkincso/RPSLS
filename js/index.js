@@ -383,7 +383,8 @@ function doesConnectionExist() {
   const warningMessage = document.getElementById('check-internet');
   const video = document.getElementById('game-rule_video');
   var xhr = new XMLHttpRequest();
-  var file = "https://bbkincso.github.io/RPSLS/1x1.png";
+  const myUrl = window.location.href;
+  var file = myUrl + '1x1.png';
   var randomNum = Math.round(Math.random() * 10000);
 
   xhr.open('HEAD', file + "?rand=" + randomNum, true);

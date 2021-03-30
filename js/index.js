@@ -343,6 +343,7 @@ soundOn.addEventListener('click', () => {
 const checkOnlineStatus = async () => {
   const myUrl = window.location.href;
   console.log(myUrl);
+  console.log(myUrl + '1x1.png');
   try {
     const online = await fetch(myUrl + '1x1.png');
       return online.status >= 200 && online.status < 300; 

@@ -341,8 +341,10 @@ soundOn.addEventListener('click', () => {
 
 //function to check online status
 const checkOnlineStatus = async () => {
+  const myUrl = window.location.href;
+  console.log(myUrl);
   try {
-    const online = await fetch("https://bbkincso.github.io/RPSLS/1x1.png?rand=6876");
+    const online = await fetch(myUrl + '1x1.png');
       return online.status >= 200 && online.status < 300; 
   } catch (err) {
     return false;

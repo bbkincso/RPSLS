@@ -1,4 +1,4 @@
-# Rock - Paper - Scissors - Paper - Spock
+# Rock - Paper - Scissors - Lizard - Spock
 
 Progressive Web App
 

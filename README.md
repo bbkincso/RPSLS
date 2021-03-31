@@ -16,7 +16,7 @@ Progressive Web App
 
 ## General info
 
-RSPLS runs in the browser and can also be installed on mobile/desktop.
+RPSLS runs in the browser and can also be installed on mobile/desktop.
 It is based on a game of chance that expands called Rock, Paper, Scissors, Lizard, Spock, originally created by Sam Kass with Karen Bryla.
 
 ## Screenshots
